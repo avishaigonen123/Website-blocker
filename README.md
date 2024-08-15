@@ -3,7 +3,6 @@
 ## 📝 Overview
 The **Website Blocker** Chrome extension helps users block access to specific websites, allowing them to stay focused and avoid distractions. Users can effortlessly manage the list of blocked websites and control their browsing experience.
 
-![Demo Screenshot](https://github.com/avishaigonen123/Website-blocker/raw/main/path_to_image/demo.png)
 
 ## ✨ Features
 - **🔒 Block Websites**: Add any website to the block list to prevent access.
