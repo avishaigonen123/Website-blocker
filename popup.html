@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Site Blocker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Website Blocker</h1>
+        
+        <div class="input-group">
+            <input type="text" id="siteInput" placeholder="Enter website to block (e.g., example.com)">
+            <button id="blockSiteBtn">Block Site</button>
+        </div>
+        
+        <h2>Blocked Sites</h2>
+        <ul id="blockedSitesList"></ul>
+        
+        <div class="action-buttons">
+            <button id="removeAllBtn" class="danger">Remove All</button>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

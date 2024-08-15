@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nope</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f5a623, #f093fb);
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            animation: bounce 2s infinite;
+        }
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            color: #ff0000;
+        }
+        .meme {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nope</h1>
+        <img class="meme" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQbud9Qslwhl6sUXwHBYj9w0tjDfr5taaI3uyDnp1EG_WW7_kO6" alt="Nope Meme 1">
+        <img class="meme" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacZI4pxEzaNJUS4Wdv_PJw7GjJ6xSoZAvBQ&s" alt="Nope Meme 2">
+        <p>Sorry, not today!</p>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn">Try Again?</a>
+    </div>
+</body>
+</html>

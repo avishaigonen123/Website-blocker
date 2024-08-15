@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #ecf0f1;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul li .remove-btn {
+    background-color: #e74c3c;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+ul li .remove-btn:hover {
+    background-color: #c0392b;
+}
+
+.action-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.action-buttons .danger {
+    background-color: #e74c3c;
+}
+
+.action-buttons .danger:hover {
+    background-color: #c0392b;
+}
+
+
+/* styles.css */
+.container {
+    width: 300px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+#blockedSitesList li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.remove-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: darkred;
+}
+
+.action-buttons {
+    margin-top: 20px;
+}
+
+.danger {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.danger:hover {
+    background-color: darkred;
+}
