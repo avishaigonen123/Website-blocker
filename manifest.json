@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "Website Blocker",
-    "version": "1.0",
-    "description": "Block and manage access to specific websites with ease. Add sites to a block list and prevent distractions with a simple, user-friendly interface.",
+    "version": "1.0.1",
+    "description": "Block and manage access to specific websites. Add sites to a block list and prevent distractions with a simple interface.",
     "permissions": [
       "storage",
       "declarativeNetRequest",

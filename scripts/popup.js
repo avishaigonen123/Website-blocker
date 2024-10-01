@@ -1,3 +1,4 @@
+// popup.js
 document.addEventListener('DOMContentLoaded', () => {
     const siteInput = document.getElementById('siteInput');
     const blockSiteBtn = document.getElementById('blockSiteBtn');
@@ -9,31 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
         blockedSitesList.innerHTML = ''; // Clear the list first
         rules.forEach(rule => {
             if (rule.condition && rule.condition.urlFilter) {
-                const site = rule.condition.urlFilter.replace('*://', '').replace('/*', '');
+                const site = rule.condition.urlFilter.replace('*://', '').replace('/*', '').replace('*','');
                 addSiteToList(site, rule.id);
             }
         });
     });
 
-    // Block site button click
-    blockSiteBtn.addEventListener('click', () => {
-        const site = siteInput.value.trim();
-        if (site) {
-            chrome.runtime.sendMessage({ action: 'addSite', site }, (response) => {
-                if (response.status === 'success') {
-                    chrome.declarativeNetRequest.getDynamicRules((rules) => {
-                        const rule = rules.find(r => r.condition.urlFilter === `*://${site}/*`);
-                        if (rule) {
-                            addSiteToList(site, rule.id);
-                        }
-                    });
-                    siteInput.value = '';
-                } else {
-                    // alert(response.message);
-                }
-            });
+    // Handle "Enter" key press inside the input field
+    siteInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            blockSitesList();
         }
     });
+
+    // Block site button click
+    blockSiteBtn.addEventListener('click', () => blockSitesList());
 
     // Remove all button click with confirmation
     removeAllBtn.addEventListener('click', () => {
@@ -43,9 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response && response.status === 'success') {
                     blockedSitesList.innerHTML = '';
                 } else if (response) {
-                    // alert(`Error: ${response.message}`);
+                    alert(`Error: ${response.message}`);
                 } else {
-                    // alert('Unexpected response from background script.');
+                    alert('Unexpected response from background script.');
                 }
             });
         }
@@ -65,12 +56,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response.status === 'success') {
                     item.remove(); // Remove the item from the list
                 } else {
-                    // alert(response.message);
+                    alert(response.message);
                 }
             });
         });
-
         item.appendChild(removeBtn);
         blockedSitesList.appendChild(item);
     }
+
+    function blockSitesList() {
+        const sites = siteInput.value.trim().split(" ");
+        for(const site of sites) {
+            if (site) {
+                chrome.runtime.sendMessage({ action: 'addSite', site }, (response) => {
+                    if (response.status === 'success') {
+                        // Add the site to the list immediately
+                        addSiteToList(site, response.ruleId);
+                        siteInput.value = '';
+                    } else {
+                        alert(response.message);
+                    }
+                });
+            }
+        }
+    }
 });
+
